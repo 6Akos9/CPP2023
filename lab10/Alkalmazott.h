@@ -6,17 +6,15 @@
 #define CPP_2022_ALKALMAZOTT_H
 #include "Szemely.h"
 
-#include "Szemely.h"
 
-class Alkalmazott : public Szemely{
+class Alkalmazott: public Szemely {
 protected:
     int id;
-    string munkakor;
     static int counter;
+    string munkakor;
 public:
-    Alkalmazott(const string &vezetekNev, const string &keresztNev, int szuletesiEv, const string &munkakor);
-    virtual void print(ostream &n)const override;
-
+    Alkalmazott(const string& vezetekNev, const string& keresztNev, int szuletesiEv, const string& munkakor);
+    void print(ostream& os) const override;
     int getId() const;
 };
 

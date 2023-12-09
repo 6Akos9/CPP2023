@@ -3,20 +3,19 @@
 //
 
 #include "Szemely.h"
-
-Szemely::Szemely(const string &vezetekNev, const string &keresztNev, int szuletesiEv) {
-    this->vezetekNev=vezetekNev;
-    this->keresztNev=keresztNev;
-    this->szuletesiEv=szuletesiEv;
+#include <iostream>
+Szemely::Szemely(const string& vezetekNev, const string& keresztNev, int szuletesiEv)
+        : vezetekNev(vezetekNev), keresztNev(keresztNev), szuletesiEv(szuletesiEv)
+{
 }
 
-void Szemely::print(ostream &n)const {
-    n<<this->vezetekNev<<' ';
-    n<<this->keresztNev<<' ';
-    n<<this->szuletesiEv<<' ';
+void Szemely::print(ostream& os) const
+{
+    os << vezetekNev << " " << keresztNev << " " << szuletesiEv;
 }
 
-ostream &operator<<(ostream &os, const Szemely &szemely) {
+ostream& operator<<(ostream& os, const Szemely& szemely)
+{
     szemely.print(os);
     return os;
 }

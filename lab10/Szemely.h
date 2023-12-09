@@ -4,19 +4,18 @@
 
 #ifndef CPP_2022_SZEMELY_H
 #define CPP_2022_SZEMELY_H
-#include <iostream>
 #include <string>
 using namespace std;
-class Szemely {
+class Szemely
+{
 protected:
     string vezetekNev;
     string keresztNev;
-    int szuletesiEv;
+    int szuletesiEv = 0;
 public:
-    Szemely(const string &vezetekNev, const string &keresztNev, int szuletesiEv);
-    virtual void print(ostream &n)const;
-
-    friend ostream &operator<<(ostream &os, const Szemely &szemely);
+    Szemely(const string& vezetekNev, const string& keresztNev, int szuletesiEv);
+    virtual void print(ostream& os) const;
+    friend ostream& operator<<(ostream& os, const Szemely& szemely);
 };
 
 

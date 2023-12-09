@@ -5,19 +5,20 @@
 #ifndef CPP_2022_MANAGER_H
 #define CPP_2022_MANAGER_H
 #include <vector>
+
 #include "Alkalmazott.h"
 
-class Manager : public Alkalmazott {
-private:
-    vector<Alkalmazott*>beosztottak;
-public:
-    Manager(const string &vezetekNev, const string &keresztNev, int szuletesiEv, const string &munkakor);
 
-    virtual void print(ostream &n)const override;
-    void addAlkalmazott(Alkalmazott *beosztott);
+class Manager: public Alkalmazott {
+protected:
+    vector<Alkalmazott*> beosztottak;
+public:
+    const static string MANAGER_MUNKAKOR;
+    Manager(const string& vezetekNev, const string& keresztNev, int szuletesiEv, const string& munkakor);
+    void addAlkalmazott(Alkalmazott* alkalmazott);
     void deleteAlkalmazott(int id);
-    int beosztottakSzama()const;
-    static const string MANAGER_MUNKAKOR ;
+    int beosztottakSzama() const;
+    void print(ostream& os) const override;
 };
 
 

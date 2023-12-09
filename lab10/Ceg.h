@@ -5,13 +5,21 @@
 #ifndef CPP_2022_CEG_H
 #define CPP_2022_CEG_H
 #include <vector>
-#include "Szemely.h"
+
+#include "Alkalmazott.h"
+#include "Manager.h"
+
 
 class Ceg {
-private:
-    vector<Szemely *> szemelyLista;
+protected:
+    vector<Alkalmazott*> alkalmazottak;
 public:
-    explicit Ceg(const string &vezetekNev, const string &keresztNev);
+    void addAlkalmazott(Alkalmazott* alkalmazott);
+    void deleteAlkalmazott(int id);
+    void assignManager(int id, Manager* manager);
+    void unassignManager(int id, Manager* manager);
+    void print(ostream& os) const;
+    void printManagers(ostream& os) const;
 };
 
 

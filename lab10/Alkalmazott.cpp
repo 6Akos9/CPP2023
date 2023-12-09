@@ -3,17 +3,22 @@
 //
 
 #include "Alkalmazott.h"
+#include <iostream>
 int Alkalmazott::counter = 0;
-Alkalmazott::Alkalmazott(const string &vezetekNev, const string &keresztNev, int szuletesiEv, const string &munkakor)
-        : Szemely(vezetekNev, keresztNev, szuletesiEv), munkakor(munkakor),id(++counter) {
 
+Alkalmazott::Alkalmazott(const string& vezetekNev, const string& keresztNev, int szuletesiEv, const string& munkakor)
+        : Szemely(vezetekNev, keresztNev, szuletesiEv), munkakor(munkakor)
+{
+    id = ++counter;
 }
 
-void Alkalmazott::print(ostream &n)const  {
-    Szemely::print(n);
-    n<<munkakor<<' ';
+void Alkalmazott::print(ostream& os) const
+{
+    Szemely::print(os);
+    os << " " << munkakor;
 }
 
-int Alkalmazott::getId() const {
+int Alkalmazott::getId() const
+{
     return id;
 }
