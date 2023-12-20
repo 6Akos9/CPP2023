@@ -16,21 +16,21 @@ int main() {
     int numCounties = stats->numCounties();
     int numSettlementsByCounty = stats->numSettlementsByCounty("MS");
 
-    cout << endl << endl ;
-    cout << "Settlements : " << numSettlements << endl ;
-    cout << "Counties : " << numCounties << endl ;
-    cout << "Settlements by county (MS) : " << numSettlementsByCounty << endl ;
+    cout << endl << endl;
+    cout << "Settlements: " << numSettlements << endl;
+    cout << "Counties: " << numCounties << endl;
+    cout << "Settlements by county (MS): " << numSettlementsByCounty << endl;
 
     Settlement settlement = stats->findSettlementsByNameAndCounty("Micesti" , "AB");
 
-    cout << endl << settlement.getCounty() << " " <<settlement.getName() << endl ;
+    cout << endl << settlement.getCounty() << " " <<settlement.getName() << endl;
 
     Settlement maxPop = stats->maxPopulation();
     Settlement minPop = stats->minPopulation();
 
     cout << endl << endl ;
-    cout << "Max population : " << maxPop.getName() << " " << maxPop.getPopulation() << endl ;
-    cout << "Min population : " << minPop.getName() << " " << minPop.getPopulation() << endl ;
+    cout << "Max population : " << maxPop.getName() << " " << maxPop.getPopulation() << endl;
+    cout << "Min population : " << minPop.getName() << " " << minPop.getPopulation() << endl;
 
     vector<Settlement> more = stats->findSettlementsByName("Slobozia");
 
